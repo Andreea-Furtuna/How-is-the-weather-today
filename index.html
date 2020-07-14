@@ -3,66 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Galada&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/style.css" />
-      <title>Vanilla-Weather-App</title>
+    <title>Vanilla-Weather-App</title>
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-    <h1>
-      <strong>Amsterdam</strong>
-      
-    </h1>
-    <ul>
-      <li>
-        Monday, 13 July | 14:41
-      </li>
-      <li>
-        Clear sky
-      </li>
-    </ul>
-    <div class="row">
-      <div class="col-4">
-        <img src="https://rusticescentuals.com/images/P/blue-skies.jpg" width=50% alt="clear sky"/>
-        20°C | °F
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="weather-overview">
+            <h1>
+              <strong>Amsterdam</strong>
+            </h1>
+            <ul>
+              <li>
+                Monday, 13 July | 14:41
+              </li>
+              <li>
+                Clear sky
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <div class="clearfix weather-image">
+                <img
+                  src="https://www.iconspng.com/images/sun-behind-clouds-remix/sun-behind-clouds-remix.jpg"
+                  class="float-left"
+                  width="50%"
+                  alt="clear sky"
+                />
+                <div class="float-left">
+                  <strong>20</strong><span class="units">°C | °F</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <ul>
+                <li>
+                  Feels like: °C
+                </li>
+                <li>
+                  Precipitation: %
+                </li>
+                <li>
+                  Wind: km/h
+                </li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <ul>
+                <li>
+                  Jacket or sunglasses?
+                </li>
+                <li>
+                  Umbrella?
+                </li>
+                <li>
+                  Don't forget your scarf!
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <small>
+          <a
+            href="https://github.com/Andreea-Furtuna/How-is-the-weather-today"
+            target="_blank"
+            >Open-source code</a
+          >, created by Andreea Furtuna
+        </small>
       </div>
-      <div class="col-4">
-        <ul>
-          <li>
-            Feels like: °C
-          </li>
-          <li>
-            Precipitation: %
-          </li>
-          <li>
-            Wind: km/h
-          </li>
-        </ul>
-      </div>
-      <div class="col-4">
-        <ul>
-          <li>
-          Jacket or sunglasses?
-          </li>
-          <li>
-            Umbrella?
-          </li>
-          <li>
-            Don't forget your scarf!
-          </li>
-        </ul>
-      </div>
-    </div>
-    </div>
-    <small class="source">
-      <a href="https://github.com/Andreea-Furtuna/How-is-the-weather-today" target="_blank">Open-source code</a>, created by Andreea Furtuna
-    </small>
     </div>
     <script src="src/index.js"></script>
-    </script>
   </body>
 </html>
