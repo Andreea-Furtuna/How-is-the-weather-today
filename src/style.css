@@ -1,3 +1,37 @@
+body {
+  font-family: "Galada", cursive;
+  font-weight: lighter;
+}
+
 h1 {
-  color: blue;
+  color: rgb(39, 191, 247);
+  font-size: 28px;
+  font-weight: 100;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: rgb(8, 121, 163);
+  font-size: 20px;
+  font-weight: 80;
+  line-height: 20px;
+}
+.weather-app {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid rgb(8, 121, 163);
+  border-radius: 5px;
+}
+
+.source {
+  text-align: center;
 }
