@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Vanilla-Weather-App</title>
   </head>
   <body>
@@ -23,15 +24,13 @@
         <div class="weather-app">
           <div class="weather-overview">
             <h1>
-              <strong>Amsterdam</strong>
+              <strong id="city"></strong>
             </h1>
             <ul>
               <li>
                 Monday, 13 July | 14:41
               </li>
-              <li>
-                Clear sky
-              </li>
+              <li id="description"></li>
             </ul>
           </div>
           <div class="row">
@@ -44,21 +43,18 @@
                   alt="clear sky"
                 />
                 <div class="float-left">
-                  <strong>20</strong><span class="units">°C | °F</span>
+                  <strong id="temperature"></strong
+                  ><span class="units">°C | °F</span>
                 </div>
               </div>
             </div>
             <div class="col-4">
               <ul>
-                <li>
-                  Feels like: °C
-                </li>
-                <li>
-                  Precipitation: %
-                </li>
-                <li>
-                  Wind: km/h
-                </li>
+                <li>Feels like:<span id="feel"></span>°C</li>
+                <li>Wind:<span id="wind"></span>km/h</li>
+                <li>Humidity:<span id="humidity"></span>%</li>
+                <li>Max. temp:<span id="max"></span>°C</li>
+                <li>Min. temp:<span id="min"></span>°C</li>
               </ul>
             </div>
             <div class="col-4">
