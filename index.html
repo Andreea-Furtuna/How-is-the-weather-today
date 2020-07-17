@@ -22,6 +22,22 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
+          <form id="search-form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="How is the weather in...?"
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input type="submit" value="Search" />
+              </div>
+            </div>
+          </form>
           <div class="weather-overview">
             <h1>
               <strong id="city"></strong>
@@ -49,34 +65,49 @@
             </div>
             <div class="col-6">
               <ul>
-                <li>Feels like:<span id="feel"></span>°C
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTG_JuVgXh3RA-sHP6xZeD93Cn_nr_eme-KUg&usqp=CAU"
-                  width="50px" /></li>
-                <li>Wind:<span id="wind"></span>km/h
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRgJIq_P2f6Obg09N9HcHHUzYEfZ14AxbodRA&usqp=CAU"
-                  width="50px" />
+                <li>
+                  Feels like:<span id="feel"></span>°C
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTG_JuVgXh3RA-sHP6xZeD93Cn_nr_eme-KUg&usqp=CAU"
+                    width="50px"
+                  />
                 </li>
-                <li>Humidity:<span id="humidity"></span>%
-                <img src="https://thumbs.dreamstime.com/z/illustration-feeling-safe-under-umbrella-rainy-weather-161457109.jpg"
-                  width="50px" /></li>
-                <li>Max. temp:<span id="max"></span>°C
-                <img src="https://cdn4.vectorstock.com/i/1000x1000/34/23/thermometer-sun-heat-temperature-icon-vector-22773423.jpg"
-                  width="40px" /></li>
+                <li>
+                  Wind:<span id="wind"></span>km/h
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRgJIq_P2f6Obg09N9HcHHUzYEfZ14AxbodRA&usqp=CAU"
+                    width="50px"
+                  />
+                </li>
+                <li>
+                  Humidity:<span id="humidity"></span>%
+                  <img
+                    src="https://thumbs.dreamstime.com/z/illustration-feeling-safe-under-umbrella-rainy-weather-161457109.jpg"
+                    width="50px"
+                  />
+                </li>
+                <li>
+                  Max. temp:<span id="max"></span>°C
+                  <img
+                    src="https://cdn4.vectorstock.com/i/1000x1000/34/23/thermometer-sun-heat-temperature-icon-vector-22773423.jpg"
+                    width="40px"
+                  />
+                </li>
                 <li>Min. temp:<span id="min"></span>°C</li>
               </ul>
             </div>
-            </div>
           </div>
         </div>
-        <small class="source-code">
-          <a
-            href="https://github.com/Andreea-Furtuna/How-is-the-weather-today"
-            target="_blank"
-            >Open-source code</a
-          >, created by Andreea Furtuna
-        </small>
       </div>
+      <small class="source-code">
+        <a
+          href="https://github.com/Andreea-Furtuna/How-is-the-weather-today"
+          target="_blank"
+          >Open-source code</a
+        >, created by Andreea Furtuna
+      </small>
     </div>
+
     <script src="src/index.js"></script>
   </body>
 </html>
