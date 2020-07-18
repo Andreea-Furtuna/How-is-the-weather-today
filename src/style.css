@@ -66,3 +66,10 @@ li {
   text-align: center;
   display: block;
 }
+.weather-image .active {
+  color: rgb(8, 121, 163);
+  cursor: default;
+}
+.weather-image .active:hover {
+  text-decoration: none;
+}
