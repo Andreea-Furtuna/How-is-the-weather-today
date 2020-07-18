@@ -1,15 +1,14 @@
-function formatDate(timestamp) {
-  let date = new Date(timestamp);
+function formatDate(date) {
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
 
+  let dayIndex = date.getDay();
   let days = [
     "Sunday",
     "Monday",
@@ -19,7 +18,7 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-  let day = days[date.getDay()];
+  let day = days[dayIndex];
 
   return `${day} ${hours}:${minutes}`;
 }
@@ -33,7 +32,6 @@ function displayTemperature(response) {
   let feelElement = document.querySelector("#feel");
   let maxElement = document.querySelector("#max");
   let minElement = document.querySelector("#min");
-  let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
@@ -46,7 +44,6 @@ function displayTemperature(response) {
   feelElement.innerHTML = Math.round(response.data.main.feels_like);
   maxElement.innerHTML = Math.round(response.data.main.temp_max);
   minElement.innerHTML = Math.round(response.data.main.temp_min);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -81,6 +78,11 @@ function displayCelsiusTemperature(event) {
 }
 
 let celsiusTemperature = null;
+
+let dateElement = document.querySelector("#date");
+let currentTime = new Date();
+
+dateElement.innerHTML = formatDate(currentTime);
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
