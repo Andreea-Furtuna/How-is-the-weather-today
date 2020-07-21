@@ -118,9 +118,18 @@ li {
 }
 .location-button {
   width: 40px;
-
   padding: 5px 5px 5px 5px;
+  border: 2 solid black;
+  border-radius: 5px;
+  transition: all 200ms ease-in-out;
+  background-color: #efefef;
+  color: black;
 }
+.location-button:hover {
+  color: #efefef;
+  background-color: #e3e3e5;
+}
+
 .location-icon {
   width: 25px;
   position: relative;
@@ -130,7 +139,17 @@ li {
   position: relative;
   padding: 5px 5px 5px 5px;
   margin-left: 50px;
+  border: 0.9 solid black;
+  border-radius: 5px;
+  transition: all 200ms ease-in-out;
+  background-color: #efefef;
+  color: black;
 }
+.search-button:hover {
+  color: #efefef;
+  background-color: #e3e3e5;
+}
+
 .current-date {
   font-size: 38px;
   color: rgb(39, 191, 247);
