@@ -13,7 +13,6 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${formatHours(timestamp)}`;
 }
-
 function formatHours(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -29,11 +28,13 @@ function formatHours(timestamp) {
 }
 
 function displayTemperature(response) {
+  console.log(response);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
   let feelElement = document.querySelector("#feel");
   let maxElement = document.querySelector("#max");
   let minElement = document.querySelector("#min");
@@ -46,6 +47,7 @@ function displayTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   feelElement.innerHTML = Math.round(response.data.main.feels_like);
   maxElement.innerHTML = Math.round(response.data.main.temp_max);
   minElement.innerHTML = Math.round(response.data.main.temp_min);
@@ -90,6 +92,23 @@ function search(city) {
 
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
+
+  let currentLocationButton = document.querySelector(
+    "#current-location-button"
+  );
+  currentLocationButton.addEventListener("click", getCurrentLocation);
+}
+
+function searchLocation(position) {
+  let apiKey = "6ef1e8464c3d2cf1f0b480456f49e6c9";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+  console.log(apiUrl);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
 }
 function handleSubmit(event) {
   event.preventDefault();

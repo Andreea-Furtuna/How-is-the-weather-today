@@ -1,5 +1,5 @@
 body {
-  font-family: "Mulish", sans-serif;
+  font-family: "Dancing Script", cursive;
   font-weight: lighter;
 }
 
@@ -25,11 +25,13 @@ li {
   font-weight: 80;
   line-height: 20px;
 }
+
 .weather-app-wrapper {
   max-width: 700px;
   margin: 30px auto;
 }
 .weather-app {
+  background-image: url(https://images.pexels.com/photos/3377538/pexels-photo-3377538.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
   max-width: 700px;
   margin: 0 auto;
   padding: 20px;
@@ -79,6 +81,8 @@ li {
 .weather-forecast {
   margin-top: 10px;
   margin-left: 70px;
+  text-align: justify;
+  margin-left: -10px;
 }
 
 .weather-forecast h3 {
@@ -107,25 +111,27 @@ li {
   line-height: 15px;
   white-space: nowrap;
 }
-
-.humidity {
-  text-align: left;
-  margin-top: 20px;
-  margin-left: -320px;
-  color: rgb(8, 121, 163);
-  font-size: 20px;
-}
-.max {
-  text-align: left;
-  margin-top: 20px;
-  margin-left: -230px;
-  color: rgb(8, 121, 163);
-  font-size: 20px;
-}
-.min {
-  text-align: left;
+.weather-description {
+  padding-left: 50px;
   margin-top: 15px;
-  margin-left: -140px;
-  color: rgb(8, 121, 163);
-  font-size: 20px;
+  margin-bottom: 15px;
+}
+.location-button {
+  width: 40px;
+
+  padding: 5px 5px 5px 5px;
+}
+.location-icon {
+  width: 25px;
+  position: relative;
+  padding: 5px 5px 5px 5px;
+}
+.search-button {
+  position: relative;
+  padding: 5px 5px 5px 5px;
+  margin-left: 50px;
+}
+.current-date {
+  font-size: 38px;
+  color: rgb(39, 191, 247);
 }
