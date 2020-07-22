@@ -13,6 +13,7 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${formatHours(timestamp)}`;
 }
+
 function formatHours(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -92,11 +93,6 @@ function search(city) {
 
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
-
-  let currentLocationButton = document.querySelector(
-    "#current-location-button"
-  );
-  currentLocationButton.addEventListener("click", getCurrentLocation);
 }
 
 function searchLocation(position) {
@@ -109,7 +105,10 @@ function searchLocation(position) {
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
+  let cityInput = document.querySelector("#current-location-button");
+  cityInput.value = "getCurrentLocation";
 }
+
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
