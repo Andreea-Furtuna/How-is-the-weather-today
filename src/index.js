@@ -105,9 +105,11 @@ function searchLocation(position) {
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
-  let cityInput = document.querySelector("#current-location-button");
-  cityInput.value = "getCurrentLocation";
+  let cityInput = document.querySelector("#city-input");
+  cityInput.value = "";
 }
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 
 function handleSubmit(event) {
   event.preventDefault();
