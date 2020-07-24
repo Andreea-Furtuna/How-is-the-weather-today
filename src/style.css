@@ -80,9 +80,7 @@ li {
 }
 .weather-forecast {
   margin-top: 10px;
-  margin-left: 70px;
   text-align: justify;
-  margin-left: -10px;
 }
 
 .weather-forecast h3 {
@@ -97,7 +95,6 @@ li {
 
 .weather-forecast img {
   display: block;
-  margin: 0 auto;
   height: 48px;
   width: 48px;
 }
@@ -111,10 +108,11 @@ li {
   line-height: 15px;
   white-space: nowrap;
 }
+
 .weather-description {
-  padding-left: 50px;
   margin-top: 15px;
   margin-bottom: 15px;
+  margin: 0 auto;
 }
 .location-button {
   width: 40px;
