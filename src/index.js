@@ -1,5 +1,5 @@
 function formatDate(timestamp) {
-  let date = new Date(timestamp);
+  let now = new Date(timestamp);
 
   let days = [
     "Sunday",
@@ -10,8 +10,38 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-  let day = days[date.getDay()];
-  return `${day} ${formatHours(timestamp)}`;
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  function getType() {
+    if (date === 1 || date === 21 || date === 31) {
+      return "st";
+    } else if (date === 2 || date === 22) {
+      return "nd";
+    } else if (date === 3 || date === 23) {
+      return "rd";
+    } else return "th";
+  }
+
+  let currentMonth = months[now.getMonth()];
+  let currentDay = days[now.getDay()];
+  let date = now.getDate();
+  let dateType = getType(date);
+  let year = now.getFullYear();
+  let formattedTime = formatHours(timestamp);
+  return `${currentDay} - ${currentMonth} ${date}${dateType} ${year} - ${formattedTime}`;
 }
 
 function formatHours(timestamp) {
@@ -35,7 +65,7 @@ function displayTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let dateElement = document.querySelector("#date");
+  let fullDateElement = document.querySelector("#full-date");
   let feelElement = document.querySelector("#feel");
   let maxElement = document.querySelector("#max");
   let minElement = document.querySelector("#min");
@@ -48,7 +78,7 @@ function displayTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  fullDateElement.innerHTML = formatDate(response.data.dt * 1000);
   feelElement.innerHTML = Math.round(response.data.main.feels_like);
   maxElement.innerHTML = Math.round(response.data.main.temp_max);
   minElement.innerHTML = Math.round(response.data.main.temp_min);

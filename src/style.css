@@ -26,6 +26,10 @@ li {
   line-height: 20px;
 }
 
+.new-date {
+  text-decoration: underline;
+}
+
 .weather-app-wrapper {
   max-width: 700px;
   margin: 30px auto;
@@ -142,6 +146,11 @@ li {
   transition: all 200ms ease-in-out;
   background-color: #efefef;
   color: black;
+}
+@media (min-width: 768px) {
+  #search-city {
+    width: 50%;
+  }
 }
 .search-button:hover {
   color: #efefef;
